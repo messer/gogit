@@ -1,3 +1,12 @@
 FROM golang:alpine
-RUN apk --no-cache --update add git
+
+ENV GO111MODULE on
+ENV CGO_ENABLED 0
+ENV GOOS linux
+ENV GOARCH amd64
+
+RUN apk --no-cache --update add busybox-extras git samurai curl
+RUN go get -u golang.org/x/lint/golint
+
+WORKDIR /workdir
 
