@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:1.18-alpine
 
 ENV GO111MODULE on
 ENV CGO_ENABLED 0
